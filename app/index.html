@@ -6,27 +6,35 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="css/style.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
   
   <header class="header">
     <div class="container">
-      <div class="header__inner">
-        <a href="#" class="logo">
-          <picture class="logo__img">
-            <source srcset="images/logo-mobile.png" media="(max-width: 640px)">
-            <img src="images/logo.png" alt="logo">
-          </picture>
-        </a>
+      <div id="header__nav" class="header__inner">
+        <div class="logo__wrapper"  data-menuanchor="#intro">
+          <a href="#intro" class="logo">
+            <picture class="logo__img">
+              <source srcset="images/logo-mobile.png" media="(max-width: 640px)">
+              <img src="images/logo.png" alt="logo">
+            </picture>
+          </a>
+        </div>
         <nav class="menu">
           <ul class="menu__list">
-            <li class="menu__list-item"><a href="#" class="menu__list-link">О ДРОНЕ</a></li>
-            <li class="menu__list-item"><a href="#" class="menu__list-link">ПРЕИМУЩЕСТВА</a></li>
-            <li class="menu__list-item"><a href="#" class="menu__list-link">ХАРАКТЕРИСТИКИ</a></li>
-            <li class="menu__list-item"><a href="#" class="menu__list-link">ВОПРОСЫ</a></li>
-            <li class="menu__list-item"><a href="#" class="menu__list-link">КОНТАКТЫ</a></li>
+            <li class="menu__list-item" data-menuanchor="#product"><a href="#product" class="menu__list-link">О ДРОНЕ</a></li>
+            <li class="menu__list-item" data-menuanchor="#benefits"><a href="#benefits" class="menu__list-link">ПРЕИМУЩЕСТВА</a></li>
+            <li class="menu__list-item" data-menuanchor="#specification"><a href="#specification" class="menu__list-link">ХАРАКТЕРИСТИКИ</a></li>
+            <li class="menu__list-item" data-menuanchor="#questions"><a href="#questions" class="menu__list-link">ВОПРОСЫ</a></li>
+            <li class="menu__list-item" data-menuanchor="#contacts"><a href="#contacts" class="menu__list-link">КОНТАКТЫ</a></li>
+            <li class="menu__list-phone">
+              <a href="#" class="header__phone">8 (050) 567 67 67</a>
+            </li>
           </ul>
+          <button class="menu__btn">
+            <span class="menu__btn-line"></span>
+          </button>
         </nav>
         <div class="header__info">
           <button class="header__btn">КУПИТЬ</button>
@@ -36,9 +44,9 @@
     </div>
     
   </header>
-  <main>
+  <main id="fullpage">
     <!-- Intro Section -->
-    <section class="page-section intro">
+    <section class="page-section intro" data-anchor="intro">
       <div class="page-section__wrapper intro__wrapper">
         <div class="container">
           <div class="intro__inner">
@@ -57,11 +65,11 @@
     </section>
 
     <!-- Product Section -->
-    <section id="product" class="page-section product">
+    <section class="page-section product"  data-anchor="product">
       <div class="page-section__wrapper">
         <div class="container">
           <h3 class="title">Что такое Mavic 2 Pro</h3>
-          <div class="product__inner">
+          <div class="product__inner  page__inner">
             <div class="product__text">
               <p>Дрон Mavic 2 Pro - это инженерное чудо, идеальное для аэросъемки. Дрон обладает всеми лучшими технологиями DJI, он преобразит мир аэросъемки.</p>
               <p>Mavic 2 Pro оснащен совершенно новой камерой Hasselblad L1D-20c. Камера L1D-20c работает по уникальной технологии Hasselblad Natural Colour Solution (HNCS)5, позволяющей пользователям делать великолепные снимки с воздуха с разрешением в 20 мегапикселей и потрясающими цветами.</p>
@@ -84,13 +92,13 @@
     </section>
 
     <!--  Benefits Section -->
-    <section id="benefits" class="page-section cc">
+    <section class="page-section cc"  data-anchor="benefits">
       <div class="page-section__wrapper">
         <div class="container">
           <h3 class="title">Преимущества</h3>
           <div class="benefits__items">
            
-            <div class="benefits__item benefits__item benefits__item-1">
+            <div class="benefits__item benefits__item-1">
               <div class="benefits__num">1</div>
               <div class="benefits__img">
                 <img src="images/benefits-1.jpg" alt="photo">
@@ -111,7 +119,7 @@
                 <p class="benefits__info-text">Усовершенствованный режим второго поколения распознаёт и отслеживает объекты ещё точнее, быстрее и умнее.</p>
               </div>
             </div>
-            <div class="benefits__item benefits__item benefits__item-3">
+            <div class="benefits__item benefits__item-3">
               <div class="benefits__num">3</div>
               <div class="benefits__img">
                 <img src="images/benefits-3.jpg" alt="photo">
@@ -125,7 +133,7 @@
                   горизонтальная, вертикальная</p>
               </div>
             </div>
-            <div class="benefits__item">
+            <div class="benefits__item benefits__item-4">
               <div class="benefits__num">4</div>
               <div class="benefits__img">
                 <img src="images/benefits-4.jpg" alt="photo">
@@ -146,34 +154,30 @@
     </section>
 
     <!-- Specification Section -->
-    <section id="specification" class="page-section specification">
+    <section class="page-section specification"  data-anchor="specification"> 
       <div class="page-section__wrapper">
         <div class="container">
           <h3 class="title">Характеристики</h3>
-          <div class="specification__inner">
+          <div class="specification__inner page__inner">
             <div class="specification__item">
-              <div class="specification__item-wrapper">
-                <h4 class="specifivation__item-title">Dlog-M 10 бит</h4>
-                <p class="specificaton__item-text">Mavic 2 Pro поддерживает цветовой профиль Dlog-M 10 бит с более широким динамическим диапазоном, дающим больше возможностей для цветокоррекции.</p>
+              <div class="specification__item-wrapper specification__item-wrapper-1">
+                <h4 class="specification__item-title">Dlog-M 10 бит</h4>
+                <p class="specification__item-text">Mavic 2 Pro поддерживает цветовой профиль Dlog-M 10 бит с более широким динамическим диапазоном, дающим больше возможностей для цветокоррекции.</p>
               </div>
-            </div>
-            <div class="specification__item">
-              <div class="specification__item-wrapper">
-                <h4 class="specifivation__item-title">Камера Hasselblad</h4>
-                <p class="specificaton__item-text">Камера Hasselblad L1D-20С известны эргономичным дизайном и превосходным качеством изображений. </p>
+              <div class="specification__item-wrapper specification__item-wrapper-2">
+                <h4 class="specification__item-title">Камера Hasselblad</h4>
+                <p class="specification__item-text">Камера Hasselblad L1D-20С известны эргономичным дизайном и превосходным качеством изображений. </p>
               </div>
             </div>
             <div class="specification__item"><img src="images/mavic.png" alt="mavic"></div>
             <div class="specification__item">
-              <div class="specification__item-wrapper">
-                <h4 class="specifivation__item-title">Матрица CMOS 1</h4>
-                <p class="specificaton__item-text">Зона активной работы новой 1-дюймовой матрицы CMOS в четыре раза превышает показатели Mavic Pro</p>
+              <div class="specification__item-wrapper specification__item-wrapper-3">
+                <h4 class="specification__item-title">Матрица CMOS 1</h4>
+                <p class="specification__item-text">Зона активной работы новой 1-дюймовой матрицы CMOS в четыре раза превышает показатели Mavic Pro</p>
               </div>
-            </div>
-            <div class="specification__item">
-              <div class="specification__item-wrapper">
-                <h4 class="specifivation__item-title">Видео HDR</h4>
-                <p class="specificaton__item-text">Благодаря поддержке видео 4K HDR 10 бит, Mavic 2 Pro можно подсоединить к совместимому с HLG 4K ТВ и просматривать запись в полном цветовом спектре</p>
+              <div class="specification__item-wrapper specification__item-wrapper-4">
+                <h4 class="specification__item-title">Видео HDR</h4>
+                <p class="specification__item-text">Благодаря поддержке видео 4K HDR 10 бит, Mavic 2 Pro можно подсоединить к совместимому с HLG 4K ТВ и просматривать запись в полном цветовом спектре</p>
               </div>
             </div>
           </div>
@@ -183,26 +187,26 @@
     </section>
 
     <!-- Questions Section -->
-    <section id="questions" class="page-section questions">
+    <section class="page-section questions"  data-anchor="questions">
       <div class="page-section__wrapper">
         <div class="container">
           <h3 class="title">Остались вопросы?</h3>
-          <div class="quastions__accordion">
-            <div class="quastions__accordion-item">
-              <h4 class="quastions__accordion-title">Какие отличия между Mavic 2 Pro и Mavic 2 Zoom?</h4>
-              <p class="quastions__accordion-text">В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время, скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные функции и уникальная функция Hyperlapse (гиперлапс).</p>
+          <div class="questions__accordion  page__inner">
+            <div class="questions__accordion-item">
+              <h4 class="questions__accordion-title">Какие отличия между Mavic 2 Pro и Mavic 2 Zoom?</h4>
+              <p class="questions__accordion-text">В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время, скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные функции и уникальная функция Hyperlapse (гиперлапс).</p>
             </div>
-            <div class="quastions__accordion-item">
-              <h4 class="quastions__accordion-title">Чем Mavic 2 лучше Mavic Pro?  </h4>
-              <p class="quastions__accordion-text">В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время, скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные функции и уникальная функция Hyperlapse (гиперлапс).</p>
+            <div class="questions__accordion-item">
+              <h4 class="questions__accordion-title">Чем Mavic 2 лучше Mavic Pro?  </h4>
+              <p class="questions__accordion-text">В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время, скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные функции и уникальная функция Hyperlapse (гиперлапс).</p>
             </div>
-            <div class="quastions__accordion-item">
-              <h4 class="quastions__accordion-title">Можно ли подключить Mavic 2 к очкам DJI Goggles?</h4>
-              <p class="quastions__accordion-text">В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время, скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные функции и уникальная функция Hyperlapse (гиперлапс).</p>
+            <div class="questions__accordion-item">
+              <h4 class="questions__accordion-title">Можно ли подключить Mavic 2 к очкам DJI Goggles?</h4>
+              <p class="questions__accordion-text">В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время, скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные функции и уникальная функция Hyperlapse (гиперлапс).</p>
             </div>
-            <div class="quastions__accordion-item">
-              <h4 class="quastions__accordion-title">Можно ли подключить Mavic 2 к очкам DJI Goggles?</h4>
-              <p class="quastions__accordion-text">В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время, скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные функции и уникальная функция Hyperlapse (гиперлапс).</p>
+            <div class="questions__accordion-item">
+              <h4 class="questions__accordion-title">Можно ли подключить Mavic 2 к очкам DJI Goggles?</h4>
+              <p class="questions__accordion-text">В Mavic 2 улучшены практически все аспекты: камера, передача видеосигнала, полётное время, скорость, уровень шума, обнаружение препятствий в нескольких направлениях, интеллектуальные функции и уникальная функция Hyperlapse (гиперлапс).</p>
             </div>
           </div>
         </div>
@@ -211,11 +215,11 @@
     </section>
 
     <!-- Contacts Section -->
-    <section id="contacts" class="page-section contacts">
+    <section class="page-section contacts"  data-anchor="contacts">
       <div class="page-section__wrapper">
         <div class="container">
-          <h3 class="title"></h3>
-          <div class="contacts__inner">
+          <h3 class="title">Контакты</h3>
+          <div class="contacts__inner  page__inner">
             <div class="contacts__info">
               <div class="contacts__info-box">
                 <p class="contacts__info-title">Киев</p>
@@ -237,12 +241,12 @@
               <form action="">
                 <h4 class="contacts__form-title">Остались вопросы? </h4>
                 <p class="contacts__form-text">Мы обязательно свяжемся с вами в течение двух рабочих дней</p>
-                <div class="contact__form-line">
-                  <input class="contact__form-input" type="text" placeholder="Ваше имя">
-                  <input class="contact__form-input" type="email" placeholder="Ваше e-mail">
+                <div class="contacts__form-line">
+                  <input class="contacts__form-input" type="text" placeholder="Ваше имя">
+                  <input class="contacts__form-input" type="email" placeholder="Ваше e-mail">
                 </div>
-                <textarea class="contact__form-textarea" placeholder="Что вас интересует?"></textarea>
-                <button class="contact__form-btn" type="submit">отправить</button>
+                <textarea class="contacts__form-textarea" placeholder="Что вас интересует?"></textarea>
+                <button class="contacts__form-btn" type="submit">отправить</button>
               </form>
             </div>
             <ul class="contacts__social-list">
@@ -251,17 +255,14 @@
               <li class="contacts__item"><a href="#" class="contacts__social-link"><img src="images/instagram.svg" alt="icon"></a></li>
             </ul>
           </div>
+          <footer>
+            <p>&#169; DJI, 2020</p>
+          </footer>
         </div>
       </div>
-      
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p>&#169; DJI, 2020</p>
-    </div>
-  </footer> 
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="js/libs.min.js"></script>
